@@ -1,0 +1,105 @@
+body {
+    background-image: url("fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+#buscador {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    width: 250px;
+    border-radius: 10px;
+    border: none;
+}
+
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+
+li {
+    list-style: none;
+    background-color: white;
+    flex: 1 1 250px;
+    max-width: 300px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    text-align: center;
+    transition: 0.3s;
+}
+
+li:hover {
+    transform: scale(1.05);
+}
+
+
+img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.texto {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.boton {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e76f51;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.boton:hover {
+    background-color: #d65a3f;
+}
+
+
+.perfil {
+    text-align: center;
+    max-width: 600px;
+    margin: auto;
+}
+
+.perfil img {
+    width: 300px;
+}
+
+#parrafos {
+    color: white;
+}
+
+.perfil p {
+    color: white;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 10px;
+
+}

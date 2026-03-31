@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Guitarristas virtuosos</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+
+    <h1>Guitarristas del mundo</h1>
+
+    
+    <input type="text" id="buscador" placeholder="Buscar guitarrista...">
+
+    <ul>
+
+        <li>
+            <h2>Ángel Parra</h2>
+            <img src="angel parra.jpg">
+            <p class="texto">
+                Guitarrista de Los Tres y líder del Ángel Parra Trío.
+            </p>
+            <a href="perfil-angel.html" class="boton">Ver perfil</a>
+        </li>
+
+        <li>
+            <h2>Alejandro Silva</h2>
+            <img src="ASPC.jpg">
+            <p class="texto">
+                Guitarrista de rock progresivo, participante del G3.
+            </p>
+            <a href="perfil-silva.html" class="boton">Ver perfil</a>
+        </li>
+
+        <li>
+            <h2>Mauricio Durán</h2>
+            <img src="OIP.webp">
+            <p class="texto">
+                Guitarrista de la banda Los Bunkers.
+            </p>
+            <a href="perfil-duran.html" class="boton">Ver perfil</a>
+        </li>
+
+        <li>
+            <h2>Eddie Van Halen</h2>
+            <img src="Adios-a-Eddie-Van-Halen-2020.jpg">
+            <p class="texto">
+                Guitarrista de la Banda Van Halen Considerando uno de los mejores del mundo.
+            </p>
+            <a href="perfil-vanhalen.html" class="boton">Ver perfil</a>
+        </li>
+
+        <li>
+            <h2>Steve Vai</h2>
+            <img src="steve vai.jpg">
+            <p class="texto">
+                Steven Siro Vai es un guitarrista, compositor y productor musical estadounidense.
+            </p>
+            <a href="perfil-steve-vai.html" class="boton">Ver perfil</a>
+        </li>
+
+        <li>
+            <h2>Paul Gilbert</h2>
+            <img src="a_main_PaulGilbert.jpg">
+            <p class="texto">
+                Paul Brandon Gilbert es un guitarrista estadounidense, reconocido por haber integrado las agrupaciones Racer X y Mr. Big
+            </p>
+            <a href="perfil-paul-gilbert.html   " class="boton">Ver perfil</a>
+        </li>
+
+
+
+    </ul>
+
+    <!-- BUSCADOR JS -->
+    <script>
+let buscador = document.getElementById("buscador");
+let tarjetas = document.querySelectorAll("li");
+
+buscador.onkeyup = function() {
+
+    let texto = buscador.value.toLowerCase();
+
+    for (let i = 0; i < tarjetas.length; i++) {
+
+        let contenido = tarjetas[i].innerText.toLowerCase();
+
+        if (contenido.includes(texto)) {
+            tarjetas[i].style.display = "block";
+        } else {
+            tarjetas[i].style.display = "none";
+        }
+
+    }
+}
+</script>
+
+</body>
+</html>

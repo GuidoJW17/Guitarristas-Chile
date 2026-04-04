@@ -1,5 +1,5 @@
 body {
-    background-image: url("fondo.jpg");
+    background-image: url("guitarra-fondo.avif");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,12 +12,79 @@ body {
 
 
 h1 {
-    text-align: center;
+    position: relative;
+    background-color: #1a0033; /* morado oscuro */
     color: white;
-    font-family: "Times New Roman";
+    text-align: center;
+
+    /* Tamaño y tipografía */
+    font-family: "Times New Roman", Times, serif;
+    font-size: 48px;
+
+    /* Espaciado */
+    padding: 40px;
+    margin: 20px 20px 80px 20px; /* MÁS espacio abajo */
+
+    overflow: hidden;
+    z-index: 1;
+
+    /* Animación de entrada */
+    transform: translateY(100%);
+    opacity: 0;
+    animation: subir 1s ease-out forwards;
+}
+
+/* Borde animado más grueso */
+h1::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+
+    background: linear-gradient(90deg, #7b2cbf, #9d4edd, #c77dff, #7b2cbf);
+    z-index: -1;
+
+    animation: girarBorde 4s linear infinite;
+}
+
+/* Interior (simula el borde) */
+h1::after {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    right: 6px;
+    bottom: 6px;
+
+    background-color: #1a0033;
+    z-index: -1;
+}
+
+/* Animaciones */
+@keyframes subir {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes girarBorde {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 #buscador {
+    
     display: block;
     margin: 20px auto;
     padding: 10px;
@@ -38,7 +105,7 @@ ul {
 
 li {
     list-style: none;
-    background-color: white;
+    background: linear-gradient(90deg, #7b2cbf, #9d4edd, #c77dff, #7b2cbf);
     flex: 1 1 250px;
     max-width: 300px;
     padding: 20px;
@@ -72,14 +139,14 @@ img {
     display: inline-block;
     margin-top: 10px;
     padding: 10px;
-    background-color: #e76f51;
+    background-color: lightblue;
     color: white;
     text-decoration: none;
     border-radius: 8px;
 }
 
 .boton:hover {
-    background-color: #d65a3f;
+    background: linear-gradient(90deg, #7b2cbf, #9d4edd, #c77dff, #7b2cbf);
 }
 
 
@@ -103,4 +170,131 @@ img {
     padding: 10px;
     border-radius: 10px;
 
+}
+
+input {
+    background: linear-gradient(90deg, #7b2cbf, #9d4edd, #c77dff, #7b2cbf); 
+}
+
+p {
+    background: linear-gradient(90deg, #7b2cbf, #9d4edd, #c77dff, #7b2cbf);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+
+/* Título */
+h1 {
+    background-color: #4f81bd;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin: 20px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    gap: 30px;
+    margin: 20px;
+    align-items: flex-start;
+}
+
+/* Imagen */
+.imagen img {
+    width: 450px;
+    border-radius: 8px;
+}
+
+/* TEXTO ESPECÍFICO (ID) */
+#texto-van-halen {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Palabras destacadas dentro del ID */
+#texto-van-halen strong {
+    color: darkblue;
+}
+
+/* Botón */
+.boton {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4f81bd;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Hover del botón */
+.boton:hover {
+    background-color: #355f8c;
+}
+
+/* Contenedor */
+.imagen {
+    position: relative;
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Imagen */
+.imagen img {
+    width: 450px;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Borde animado REAL */
+.imagen::before {
+    content: "";
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    width: calc(100% + 12px);
+    height: calc(100% + 12px);
+
+    background: linear-gradient(
+        0deg,
+        #7b2cbf,
+        #9d4edd,
+        #c77dff,
+        #7b2cbf
+    );
+
+    z-index: -1;
+
+    /* CLAVE: animar el fondo, no rotar el div */
+    background-size: 300% 300%;
+    animation: bordeFlujo 4s linear infinite;
+}
+
+/* Mantiene el interior limpio */
+.imagen::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background: transparent;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+/* Animación fluida como el título */
+@keyframes bordeFlujo {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
